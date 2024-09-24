@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Calendar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #calendar {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #eventForm {
+            width: 100%;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .event {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="calendar"></div>
+
+        <div id="eventForm">
+            <h2>Add Event</h2>
+            <form id="addEventForm">
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" required>
+                <label for="eventDate">Event Date:</label>
+                <input type="date" id="eventDate" required>
+                <label for="eventVenue">Event Venue:</label>
+                <input type="text" id="eventVenue" required>
+                <button type="button" onclick="addEvent()">Add Event</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sample events data
+        const events = [
+            { name: "Family Reunion", date: "2023-12-01", venue: "Park" },
+            { name: "Dad's Birthday", date: "2023-12-10", venue: "Home" },
+        ];
+
+        // Function to add an event
+        function addEvent() {
+            const eventName = document.getElementById('eventName').value;
+            const eventDate = document.getElementById('eventDate').value;
+            const eventVenue = document.getElementById('eventVenue').value;
+
+            if (eventName && eventDate && eventVenue) {
+                events.push({ name: eventName, date: eventDate, venue: eventVenue });
+                displayCalendar();
+            } else {
+                alert('Please fill in all the fields');
+            }
+        }
+
+        // Function to display the calendar
+        function displayCalendar() {
+            const calendarDiv = document.getElementById('calendar');
+            calendarDiv.innerHTML = '<h2>Family Calendar</h2>';
+
+            for (const event of events) {
+                calendarDiv.innerHTML += `
+                    <div class="event">
+                        <strong>${event.name}</strong><br>
+                        Date: ${event.date}<br>
+                        Venue: ${event.venue}
+                    </div>
+                `;
+            }
+        }
+
+        // Initial display
+        displayCalendar();
+    </script>
+</body>
+</html>
+

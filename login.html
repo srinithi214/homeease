@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* Reset some default styles */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #ff6f61; /* Shades of Red */
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.user-options {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.user-options a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+
+.hero {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #ffccbc; /* Metallic Gold */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Ensure the section takes the full height of the viewport */
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e57373; /* Metallic Silver */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #ff6f61; /* Reusing the Red shade */
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info, .social-media {
+  text-align: center;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+/* ... Previous styles ... */
+
+.login-page {
+  background-color: #f8f8f8;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-container {
+  text-align: center;
+}
+
+.login-box {
+  background-color: #e57373; /* Warm red shade */
+  padding: 30px;
+  border-radius: 15px; /* Increased border radius */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased box shadow */
+  max-width: 500px; /* Increased max-width */
+  width: 100%;
+}
+
+.login-box h1 {
+  margin-bottom: 20px;
+  color: #fff; /* White text color for better visibility */
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-box label {
+  margin-bottom: 8px;
+  color: #fff; /* White text color for better visibility */
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd; /* Added border for input fields */
+  border-radius: 5px; /* Added border radius for input fields */
+}
+
+.login-box button {
+  width: 100%;
+  background-color: #ee9090; /* Darker shade of red for better contrast */
+  color: #fff; /* White text color for the button */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-box p {
+  margin-top: 16px;
+  font-size: 0.9em;
+  color: #fff; /* White text color for better visibility */
+}
+    </style>
+    <title>Your Project Name</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Your Project Logo</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section class="hero">
+        <h1>Simplify Your Daily Life</h1>
+        <p>Manage duties, budget, and chores effortlessly with our cutting-edge software.</p>
+          <form action="/core" method="GET">
+            <Button type="submit" style="color:aqua"> Get Started </Button>
+        </form>
+    </section>
+
+    <!-- Other sections (features, testimonials, how it works, pricing, etc.) can be added here -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>Contact us: info@example.com</p>
+            </div>
+            <div class="social-media">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

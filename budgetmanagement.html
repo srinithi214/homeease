@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Management</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="monthlyIncome">Enter Monthly Income:</label>
+  <input type="number" id="monthlyIncome" placeholder="Enter amount" required>
+
+  <label for="dailyExpenditure">Enter Daily Expenditure:</label>
+  <input type="number" id="dailyExpenditure" placeholder="Enter amount">
+  <button onclick="addExpenditure()">Add Expenditure</button>
+
+  <div id="result">
+    <h2>Budget Summary</h2>
+    <p>Monthly Income: $<span id="displayMonthlyIncome">0</span></p>
+    <p>Total Expenditure: $<span id="displayTotalExpenditure">0</span></p>
+    <p>Remaining Balance: $<span id="displayRemainingBalance">0</span></p>
+  </div>
+
+  <script>
+    let monthlyIncome = 0;
+    let totalExpenditure = 0;
+
+    function addExpenditure() {
+      const dailyExpenditure = parseFloat(document.getElementById('dailyExpenditure').value);
+      if (isNaN(dailyExpenditure)) {
+        alert('Please enter a valid amount for daily expenditure.');
+        return;
+      }
+
+      totalExpenditure += dailyExpenditure;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value) || 0;
+
+      document.getElementById('displayMonthlyIncome').innerText = monthlyIncome.toFixed(2);
+      document.getElementById('displayTotalExpenditure').innerText = totalExpenditure.toFixed(2);
+
+      const remainingBalance = monthlyIncome - totalExpenditure;
+      document.getElementById('displayRemainingBalance').innerText = remainingBalance.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
+

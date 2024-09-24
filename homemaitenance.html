@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-top: 10px;
+        }
+        
+        input, select {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Home Maintenance Booking</h1>
+        <form id="bookingForm">
+            <label for="service">Select Service:</label>
+            <select id="service" name="service">
+                <option value="washing-machine">Washing Machine Repair</option>
+                <option value="fridge">Fridge Repair</option>
+                <option value="plumber">Plumber</option>
+                <option value="electricity">Electricity Issues</option>
+                <option value="room-cleaning">Room Cleaning</option>
+                <option value="laundry">Laundry</option>
+            </select>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" required>
+
+            <label for="address">Your Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+            <br>
+            <button type="button" onclick="submitForm()">Book Now</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+            // You can add logic here to handle the form submission, e.g., sending data to a server.
+            alert('Booking Successful!');
+            document.getElementById('bookingForm').reset();
+        }
+        
+    </script>
+</body>
+</html>
